@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--translate-x), var(--translate-y));
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const colors = ['#e74c3c', '#3498db', '#f1c40f', '#9b59b6', '#2ecc71'];
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            const size = Math.random() * 50 + 20 + 'px';
+            const direction = Math.floor(Math.random() * 4);
+            const delay = Math.random() * 5 + 's';
+            const duration = Math.random() * 5 + 5 + 's';
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            bubble.classList.add('bubble');
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.backgroundColor = color;
+            bubble.style.animationDelay = delay;
+            bubble.style.animationDuration = duration;
+
+            let translateX, translateY;
+            switch (direction) {
+                case 0: // from top
+                    bubble.style.top = '-50px';
+                    bubble.style.left = Math.random() * 100 + 'vw';
+                    translateX = Math.random() * 200 - 100 + 'vw';
+                    translateY = '100vh';
+                    break;
+                case 1: // from bottom
+                    bubble.style.bottom = '-50px';
+                    bubble.style.left = Math.random() * 100 + 'vw';
+                    translateX = Math.random() * 200 - 100 + 'vw';
+                    translateY = '-100vh';
+                    break;
+                case 2: // from left
+                    bubble.style.left = '-50px';
+                    bubble.style.top = Math.random() * 100 + 'vh';
+                    translateX = '100vw';
+                    translateY = Math.random() * 200 - 100 + 'vh';
+                    break;
+                case 3: // from right
+                    bubble.style.right = '-50px';
+                    bubble.style.top = Math.random() * 100 + 'vh';
+                    translateX = '-100vw';
+                    translateY = Math.random() * 200 - 100 + 'vh';
+                    break;
+            }
+
+            bubble.style.setProperty('--translate-x', translateX);
+            bubble.style.setProperty('--translate-y', translateY);
+
+            document.body.appendChild(bubble);
+
+            setTimeout(() => {
+                bubble.remove();
+            }, parseFloat(duration) * 1000);
+        }
+
+        setInterval(createBubble, 300);
+    </script>
+</body>
+</html>

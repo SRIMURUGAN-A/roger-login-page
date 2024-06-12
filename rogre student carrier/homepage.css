@@ -1,0 +1,642 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow:scroll;
+  }  
+
+  .anytime{
+    color: r#512da8;
+    text-size-adjust: 40px;
+  }
+  
+  header {
+    margin: auto;
+    background-color: #7147d3;
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+  }
+  
+  nav {
+    flex-grow: 1;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    text-align: right;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    border: 3px;
+    text-decoration:underline;
+  }
+  
+  .profile-icon {
+    padding-right: 1rem;
+  }
+  
+  .profile-icon i {
+    font-size: 24px;
+    color: white;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .navbar{
+    padding-left: 15px;
+  }
+  
+  .nav-header{
+    background-color: transparent;
+    color:white;
+    border: none;
+    size: 50px;
+    cursor: pointer;
+  }
+  
+  .profile-icon{
+    cursor: pointer;
+  
+  }
+
+  /* Add this CSS to your existing rpugh.css file */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Off-canvas initially */
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    transition: left 0.3s ease;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    padding: 1rem;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.side-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.side-menu-open {
+    overflow-x: hidden;
+}
+
+.side-menu-open .side-menu {
+    left: 0;
+}
+
+.search-button{
+  border-radius: 300px;
+  width:50%;
+  align: center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #512da8;;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #2f62d9;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.homebutton{
+  border:2px;
+}
+/*this is the main body get start button*/
+
+.tittle-caption-button{
+  border-radius: 30px;
+  width: 200px;
+
+}
+.search-button-main{
+  display: block;
+  width:40%;
+  border-radius: 50px;
+}
+
+
+.sidebar {
+  height: 100%;
+  border: 2px solid rgb(52, 58, 56);
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #512da8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar a {
+  border-end-start-radius: 5px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #512da8;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#maa {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 10px;}
+  .sidebar a {font-size: 180px;}
+}
+
+/*this is for sub topic*/
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+}
+.nav-item a{
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+.sec-padding{
+  padding-bottom: 80px;
+}
+.fixed-top{
+  background: #F0FFF0;
+}
+.nav-item{
+  padding: 0px 5px;
+}
+.nav-btn{
+  padding: 10px 28px !important;
+  background-color: #512da8;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 33px;
+}
+
+/* Header section */
+.header-section{
+  height: 100vh;
+  background-color: #F0FFF0;
+}
+.header-details h6{
+  color: #FD511A;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.header-details h1{
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 70px;
+  color: #000000;
+  margin-bottom: 19px;
+}
+.header-details h1 span{
+  color: #512da8;
+}
+.header-details p{
+  font-size: 16px;
+  line-height: 36px;
+  color: #6C6B6B;
+  margin-bottom: 15px;
+}
+.get-btn{
+  padding: 12px 35px;
+  background-color: #512da8;
+  color: #ffffff;
+  border: none;
+  border-radius: 33px;
+  transition: all .3s;
+}
+.get-btn:hover{
+  background-color: #512da8;
+}
+
+/* Cards section */
+.cards-section{
+  margin-top: 40px;
+}
+.cards-inner{
+  padding: 50px 0px;
+  text-align: center;
+  background: #F8FFFB;
+  border-radius: 10px;
+  transition: all .4s;
+}
+.cards-inner:hover{
+  background: #FFFFFF;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+}
+.cards-inner img{
+  width: 65px;
+  height: 83px;
+}
+.cards-inner h5{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #413960;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.cards-inner p{
+  font-size: 16px;
+  line-height: 24px;
+  color: #585859;
+  margin-bottom: 0;
+}
+
+/* course-section */
+.title-text{
+  font-size: 36px;
+  line-height: 54px;
+  color: #413960;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+.card{
+  border: none;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+}
+.card-img-top{
+  padding: 20px;
+  padding-bottom: 0;
+}
+.card-body h5{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #413960;
+  margin-bottom: 3px;
+}
+.card-body p{
+  font-size: 16px;
+  line-height: 24px;
+  color: #585859;
+  margin-bottom: 19px;
+}
+.buy-btn{
+  padding: 8px 27px;
+  background-color: #512da8;
+  color: #ffffff;
+  border: none;
+  border-radius: 33px;
+  transition: all .3s;
+}
+.buy-btn:hover{
+  background-color: #512da8;
+}
+.card-footer{
+  background: #ffffff;
+  border-top: 0px;
+  border-radius: 18px !important;
+}
+.date img{
+  width: 24px;
+  height: 24px;
+}
+.date h6{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #585859;
+  margin-left: 3px;
+}
+/* video area */
+.video-section{
+  background-color: #F0FFF0;
+  padding: 80px 0px;
+  margin-bottom: 50px;
+}
+.video-details h2{
+  font-size: 36px;
+  line-height: 54px;
+  color: #413960;
+}
+.video-image img{
+  border-radius: 20px;
+}
+.video-image{
+  position: relative;
+}
+.video-icon{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+/* testimonail section */
+.testimonial-inner p{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 0;
+  padding: 15px 0px;
+  margin-left: 50px;
+}
+/* subscribe area */
+.subscribe-inner{
+  background: #F0FFF0;
+  padding: 50px 0px;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.subscribe-inner h2{
+  font-size: 36px;
+  line-height: 54px;
+  color: #413960;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.subscribe-inner a{
+  text-decoration: none;
+  color: #ffffff;
+}
+/* Footer section */
+.footer-section{
+  padding-top: 55px;
+  background: #282531;
+  color: #FFFFFF;
+}
+.footer-p p{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+}
+.footer-inner{
+  padding-bottom: 75px;
+}
+.footer-list-item ul li{
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+.footer-list-item ul li:nth-child(1){
+  font-weight: bold;
+}
+.footer-list-item a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+small{
+  font-size: 16px;
+  line-height: 30px;
+  color: #CDCDCD;
+}
+
+/* Responsive Css */
+@media only screen and (max-width: 1024px) {
+  .header-section{
+      padding-top: 80px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .header-section {
+      height: 100%;
+      padding-bottom: 50px;
+      padding-top: 0;
+  }
+  .header-details {
+      padding-top: 120px;
+  }
+  .cards-inner{
+      margin-bottom: 20px;
+  }
+  .video-details {
+      margin-bottom: 50px;
+  }
+  .testimonial-inner{
+      text-align: center;
+  }
+  .testimonial-inner p{
+      margin-left: 0;
+  }
+  .nav-btn{
+      max-width: 20%;
+      text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .card-deck{
+      display: block !important;
+  }
+  .card{
+      margin-bottom: 30px !important;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .header-details h1 {
+      font-size: 44px;
+      line-height: 65px;
+      margin-bottom: 15px;
+  }
+  .footer-list-item ul li {
+      font-size: 14px;
+      line-height: 26px;
+  }
+}
+
